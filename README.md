@@ -18,6 +18,8 @@
 4. #### База данных PostgreSQL
 
 ## Запуск:
-1. Стереть комментарий из `entrypoint.sh`
-2. `docker-compose up -d`
-3. Перейти по http://localhost:8000
+1. Клонировать репозиторий: `git clone https://github.com/inaumovv/WeatherForecast.git`
+2. Стереть комментарий из `entrypoint.sh`
+3. Перейти в рабочую директорию: `cd WeatherForecast`
+4. Запуск контейнеров: `docker-compose up -d`
+5. Перейти по http://localhost:8000
