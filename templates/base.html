@@ -1,0 +1,29 @@
+
+{% load static %}
+
+{% load worker_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+        <script src='https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=01f21ca4-2b63-4058-9e61-09207e83f713&suggest_apikey=bf929dfb-5ee0-4fa5-9476-233601a7944f'></script>
+    </head>
+
+    <body>
+        <div class="container">
+            {% block content %}
+            	
+            {% endblock %}
+        </div>
+        <script src='{% static 'js/autocomplete.js' %}'></script>
+    </body>
+</html>
+

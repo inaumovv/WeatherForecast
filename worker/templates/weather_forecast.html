@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+	<div class="header">
+        <a href="{% url 'main:index' %}" class="home-button">На главную</a>
+        <div class="city-name">{{ city }}</div>
+    </div>
+    <div class="forecast-container">
+        {% if weather_list %}
+            {% for weather in weather_list %}
+                <div class="forecast-card">
+                    <div>{{ weather.date }}</div>
+                    <img src="{% static weather.image_url %}" alt="Погода" class="weather-icon">
+                    <div class="temperature">{{ weather.temperature_max }}°C<br>{{ weather.temperature_min }}°C</div>
+                    <div class="wind-speed">Ветер: {{ weather.wind_speed_max }}м/с</div>
+                </div>
+            {% endfor %}
+
+        {% else %}
+            <h3>Введены некорректные данные</h3>
+        {% endif %}
+    </div>
+{% endblock %}

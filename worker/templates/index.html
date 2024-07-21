@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load worker_tags %}
+
+
+{% block content %}
+    <h2>Прогноз погоды</h2>
+    <div class="history">
+        <h3>Последние запросы:</h3>
+        <ul>
+            {% get_search_history request as cities %}
+            {% if cities %}
+                {% for city in cities %}
+                    <li><a href="{% url 'main:weather-forecast' %}?city={{ city.city__name }}">{{ city.city__name }}</a></li>
+                {% endfor %}
+            {% else %}
+                <li><a>Пока что нет</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <form method="GET" action="{% url 'main:weather-forecast' %}">
+        <div class="form-group">
+            <label for="city">Введите название города:</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Введите город"
+                   autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">Показать погоду</button>
+    </form>
+{% endblock %}
