@@ -18,5 +18,6 @@
 4. #### База данных PostgreSQL
 
 ## Запуск:
-1. `docker-compose up -d`
-2. Перейти по http://localhost:8000
+1. Стереть комментарий из `entrypoint.sh`
+2. `docker-compose up -d`
+3. Перейти по http://localhost:8000
