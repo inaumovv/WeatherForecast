@@ -13,6 +13,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+RUN chmod +x entrypoint.sh
 ENTRYPOINT ["/usr/src/apps/weather_forecast/entrypoint.sh"]
 
 CMD python manage.py runserver 0.0.0.0:8000
