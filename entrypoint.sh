@@ -13,7 +13,7 @@ then
     echo "Пора!"
 fi
 
-#Стереть
+
 python manage.py makemigrations
 python manage.py migrate
 
